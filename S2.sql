@@ -1,16 +1,58 @@
-CREATE TABLE IF NOT EXISTS Salesmann (
-    Salesman_id TEXT PRIMARY KEY,
-    name TEXT,
-    city TEXT,
-    Comission REAL
+ CREATE TABLE IF NOT EXISTS STUDENTSSS (
+
+ROLL_NO TEXT PRIMARY KEY,
+
+NAME TEXT NOT NULL,
+
+ADDRESS TEXT,
+
+PHONE TEXT,
+
+AGE INTEGER
+
 );
 
-INSERT INTO Salesmann (Salesman_id, name, city, Comission) VALUES
-('5001', 'James Hoog', 'New York', 0.15),
-('5002', 'Nail Knite', 'Paris', 0.13),
-('5005', 'Pit Alex', 'London', 0.11),
-('5006', 'Mc Lyon', 'Paris', 0.14),
-('5007', 'Paul Adam', 'Rome', 0.13),
-('5003', 'Lauson Hen', 'San Jose', 0.12);
+-- Insert sample data into the STUDENTSSS table
 
-SELECT * FROM Salesmann;
+INSERT INTO STUDENTSSS (ROLL_NO, NAME, ADDRESS, PHONE, AGE) VALUES
+
+('1', 'RAM', 'DELHI', '******', 18),
+
+('2', 'RAMESH', 'GURGAON', '******', 18),
+
+('3', 'SUJIT', 'ROHTAK', '******', 20),
+
+('4', 'SURESH', 'DELHI', '******', 18),
+
+('5', 'AMAN', 'ROHTAK', '******', 20),
+
+('6', 'HARSH', 'GURGAON', '******', 18);
+
+-- Select all records from the table
+
+SELECT * FROM STUDENTSSS;
+
+-- Query students who are 18 years old and live in Delhi
+
+SELECT * FROM STUDENTSSS WHERE AGE = 18 AND ADDRESS = 'DELHI';
+
+-- Query students who are 18 years old and named RAM
+
+SELECT * FROM STUDENTSSS WHERE AGE = 18 AND NAME = 'RAM';
+
+-- Query students named RAM or SUJIT
+
+SELECT * FROM STUDENTSSS WHERE NAME = 'RAM' OR NAME = 'SUJIT';
+
+-- Query students named RAM or age 20
+
+SELECT * FROM STUDENTSSS WHERE NAME = 'RAM' OR AGE = 20;
+
+-- Query students aged 18 and named RAM or RAMESH
+
+SELECT * FROM STUDENTSSS
+
+WHERE AGE = 18 AND (NAME = 'RAM' OR NAME = 'RAMESH');
+
+
+
