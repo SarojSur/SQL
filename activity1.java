@@ -1,57 +1,22 @@
-class hillstations{
-    void location(){
-        System.out.println("Location is:");
-    }
-void famousfor(){
-    System.out.println("Famous for:");
+interface MyInterface
+{
+    public void method1();
+    public void method2();
 }
-}
-class Manali extends hillstations{
-    void location(){
-        System.out.println("Manali is located in Himachal Pradesh.");
+class Main implements MyInterface
+{
+    public void method1()
+    {
+        System.out.println("implementation of method1");
     }
-    void famousfor(){
-        System.out.println("IT is famous for its beautiful mountains and adventure sports");
+    public void method2()
+    {
+        System.out.println("implementation of method2");
     }
-}
-class Mussoorie extends hillstations {
-    void location(){
-        System.out.println("Mussoorie is located in Uttarakhand.");
-    }
-    void famousfor(){
-        System.out.println("It is Famous for education institutions");
-    }
-}
-class Gulmarg extends hillstations {
-    void location(){
-        System.out.println("Gulmarg is located in J&k.");
-    }
-    void famousfor(){
-        System.out.println("It is Famous for skiing");
-    }
-}
-class Main{
-    public static void main (String args[]){
-      hillstations A = new hillstations();
-      hillstations M = new Manali();
-
-      hillstations  Mu = new Mussoorie();
-
-      hillstations G = new Gulmarg();
-
-      A.location();
-      A.famousfor();
-
-
-      M.location();
-      M.famousfor();
-
-
-      Mu.location();
-      Mu.famousfor();
-
-      
-      G.location();
-      G.famousfor();
+    public static void main(String args[])
+    {
+        MyInterface obj = new Main();
+        obj.method1();
+        obj.method2();
     }
 }
